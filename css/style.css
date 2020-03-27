@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab|Zilla+Slab+Highlight&display=swap');
+
+/* Reset */
+
+*,
+*::before,
+*::after { 
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* Defaults */
+
+html {
+
+  /* fonts */
+  font-size: 62.5%; /* 10px === 1rem */
+  --zilla: 'Zilla Slab', serif;
+  --zilla-highlight: 'Zilla Slab Highlight', serif;
+  
+  /* primary colors */
+  --neon-blue: #00ffff;
+  --lemon-yellow: #fff44f;
+  --warm-red: #ff4f5e;
+  --neon-green: #54ffbd;
+  --dark-purple: #6e008b;
+
+  /* secondary colors */
+  --black: #222222;
+  --dark-green: #005e5e;
+  --dark-blue: #00458b;
+  --dark-grey: #959595;
+  --dark-grey-2: #3f3f3f;
+  --light-grey: #e7e5e2;
+  --light-grey-1: #efefef;
+
+  box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+    background: var(--light-grey);
+    line-height: 1.5;
+}
+
+.container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: min-content min-content auto min-content;
+    /* grid-template-columns: [editor-start] 0 [full-start] minmax(5rem, auto) [center-start] repeat(8, [col-start] minmax(auto, 14rem) [col-end]) [center-end] minmax(5rem, auto) [full-end]; */
+    grid-template-columns: [editor-start] 50rem [full-start] minmax(5rem, auto) [center-start] repeat(8, [col-start] minmax(auto, 14rem) [col-end]) [center-end] minmax(5rem, auto) [full-end];
+
+    
+}
+
+.editor {
+    grid-row: 1 / -1;
+    grid-column: editor-start / 2;
+    z-index: 1;
+    background: var(--light-grey-1);
+
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--dark-grey);
+    /* display: none; */
+}
+
+.editor-title {
+    font-family: var(--zilla);
+    padding: 2rem;
+}
+
+.admin__breadcrumb {
+    padding: 2rem;
+    background: white;
+    border-bottom: 1px solid var(--light-grey-1);
+}
+
+.admin__menu {
+    background: white;
+}
+
+.admin__menu > li {
+    background: white;
+    list-style: none;
+}
+
+.admin__menu-link {
+    padding: 2rem;
+    display: block;
+}
+
+.header {
+    grid-column: full-start / full-end;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 3rem 0;
+}
+
+.site-title {
+    font-family: var(--zilla);
+}
+
+.main-menu {
+    grid-column: full-start / full-end;
+    grid-row: 2 / 3;
+    background: var(--black);
+}
+
+.main-menu ul {
+    display: flex;
+    justify-content: center;
+}
+
+.menu__item {
+    list-style: none;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: white;
+    padding: 1.5rem;
+    display: inline-block;
+}
+
+.menu__link:hover {
+    background: var(--dark-grey-2);
+    cursor: pointer;
+}
+
+.main {
+    background: var(--light-grey);
+    grid-column: full-start / full-end;
+    grid-row: 3 / 4;
+    padding: 2rem;
+
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns:[editor-start full-start] minmax(5rem, auto) [center-start] repeat(8, [col-start] minmax(auto, 14rem) [col-end]) [center-end] minmax(5rem, auto) [full-end];
+}
+
+.content {
+    grid-column: col-start 1 / col-end 5;
+    grid-row: 1 / 2;
+}
+
+.blog-post:last-child {
+    margin: 0;
+}
+
+.blog-post {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.post-title {
+    margin-bottom: 2rem;
+    font-family: var(--zilla);
+}
+
+.post-title__link {
+    text-decoration: none;
+    color: var(--dark-blue);
+}
+
+.post-title__link:hover {
+    color: var(--warm-red);
+}
+
+.sidebar {
+    grid-column: col-start 6 / col-end 8;
+    grid-row: 1 / 2;
+    padding-left: 2rem;
+}
+
+.sidebar-title {
+    margin-bottom: 2rem;
+    font-family: var(--zilla);
+}
+
+.sidebar-block {
+    background: white;
+    padding: 2rem;
+}
+
+.blogroll {
+    list-style: none;
+}
+
+.blogroll-link {
+    text-decoration: none;
+    color: var(--dark-blue);
+}
+
+.blogroll-link:hover {
+    color: var(--warm-red);
+}
+
+.footer {
+    grid-column: full-start / full-end;
+    grid-row: 4 / 5;
+    background: var(--light-grey);
+
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns:[editor-start full-start] minmax(5rem, auto) [center-start] repeat(8, [col-start] minmax(auto, 14rem) [col-end]) [center-end] minmax(5rem, auto) [full-end];
+}
+
+.copyright {
+    grid-column: center-start / center-end;
+    grid-row: 1 / 2;
+    padding: 3rem 2rem;
+    font-size: 1.8rem;
+    font-family: var(--zilla-highlight);
+}
+
+/* Media Query */
+
+@media only screen and (max-width: 900px) {
+    
+}
