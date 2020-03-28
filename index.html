@@ -6,55 +6,63 @@
     <link rel="stylesheet" href="css/style.css">
     <title>FoxPress 0.1</title>
 </head>
-<!-- <body class="container">
+<body class="container" onload="router()" onhashchange="router()">
     <div class="editor">
         <h2 class="editor-title">FoxPress Editor</h2>
-        <div class="admin__breadcrumb">
+        <!-- <div class="admin__breadcrumb">
             <span>Admin</span>
         </div>
         <ul class="admin__menu">
             <li><a class="admin__menu-link" href="#">Posts</a></li>
             <li><a class="admin__menu-link" href="#">Pages</a></li>
             <li><a class="admin__menu-link" href="#">Setting</a></li>
-        </ul>
-    </div> -->
+        </ul> -->
+        <form>
+            <input type="text" name="title" placeholder="Post Title">
+            <textarea name="content" id="content" cols="30" rows="10" placeholder="Write your blog post here"></textarea>
+        </form>
+        <button class="add-new-post">Publish</button>
+        <button class="update-post">Update</button>
+        <div class="reset-database">
+            <form>
+                <input type="text" name="reset-keyword" placeholder="Type 'reset' without quote">
+            </form>
+            <div class="reset-buttons">
+                <button class="database__reset-now">Reset Now</button>
+                <button class="database__reset-cancel">Cancel</button>
+            </div>
+        </div>
+        <div class="sidebar">
+            <button class="editor__close">Close Admin Panel</button>
+            <button class="database__reset-open">Reset Database</button>
+        </div>
+    </div>
     <header class="header">
-        <h1 class="site-title">FoxPress</h1>
+        <h1 class="site-title">FoxNotes</h1>
         <p class="site-description">Another FoxPress Blog</p>
     </header>
     <nav class="main-menu">
         <ul>
-            <li class="menu__item"><a href="#" class="menu__link">Home</a></li>
-            <li class="menu__item"><a href="#" class="menu__link">About</a></li>
-            <li class="menu__item"><a href="#" class="menu__link">Home</a></li>
-            <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>
+            <li class="menu__item"><a href="/" class="menu__link">Home</a></li>
+            <li class="menu__item"><a href="#about" class="menu__link">About</a></li>
+            <li class="menu__item"><a href="#blog" class="menu__link">Blog</a></li>
+            <li class="menu__item"><a href="#contact" class="menu__link">Contact</a></li>
         </ul>
     </nav>
 
     <main class="main">
         <div class="content">
         </div>
-        <div class="sidebar">
-            <div class="sidebar-block">
-                <h3 class="sidebar-title">Blogroll</h3>
-                <ul>
-                    <li class="blogroll">
-                        <a href="https://github.com/" class="blogroll-link">Github</a>
-                    </li>
-                    <li class="blogroll">
-                        <a href="https://babatalas.github.io/" class="blogroll-link">Babat Alas Studio</a>
-                    </li>
-                    <li class="blogroll">
-                        <a href="https://github.com/babatalas" class="blogroll-link">Eko Prasetyo</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
     </main>
     <footer class="footer">
+        <button class="editor__open">Open Admin Panel</button>
         <div class="copyright">
             <p>Proudly build with HTML, CSS, Javascript</p>
         </div>
     </footer>
+    <script src="js/appData.js"></script>
+    <script src="js/post.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
