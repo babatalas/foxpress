@@ -89,8 +89,8 @@ function generatePost(obj) {
                 <h2 class="post-title"><a href="${siteUrl}#blog/${obj.slug}" class="post-title__link">${obj.title}</a></h2>
                 ${obj.content}
                 <div class="blog-post__menu">
-                <a href="${siteUrl}#blog/${obj.slug}/edit" class="post-title__link--info">Edit Post</a>
-                <a href="${siteUrl}#blog/${obj.slug}/delete" class="post-title__link--danger">Hapus post item dari database</a>
+                <a href="#blog/${obj.slug}/edit" class="post-title__link--info">Edit Post</a>
+                <a href="#blog/${obj.slug}/delete" class="post-title__link--danger">Hapus post item dari database</a>
                 </div>
             </section>`;
 }
